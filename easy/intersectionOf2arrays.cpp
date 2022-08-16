@@ -26,7 +26,6 @@ public:
             }
         }
         vector<int> result;
-
         for (auto it = hash.begin(); it != hash.end(); it++)
         {
             if (it->second > 1)
