@@ -8,8 +8,7 @@ vector<int> sortedSquares(vector<int> nums)
     vector<int> result(length);
     int i = 0;
     int j = length - 1;
-    int x;
-    int y;
+    int x, y;
     while (i <= j)
     {
         x = nums[i] * nums[i];
