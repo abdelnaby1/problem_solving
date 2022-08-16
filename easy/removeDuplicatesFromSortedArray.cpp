@@ -1,3 +1,6 @@
+#include "iostream";
+using namespace std;
+#include "vector";
 int removeDuplicates(vector<int> &nums)
 {
     int i = 0;
