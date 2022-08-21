@@ -5,39 +5,68 @@ using namespace std;
 
 bool isIsomorphic(string s, string t)
 {
-    if (s.size() != t.size())
+    // if (s.size() != t.size())
+    // {
+    //     return false;
+    // }
+    // map<char, char> myMap;
+    // map<char, char>::iterator itr;
+    // int i = 0;
+    // for (i = 0; i < s.size(); i++)
+    // {
+    //     bool flage = true;
+    //     for (itr = myMap.begin(); itr != myMap.end(); ++itr)
+    //     {
+    //         if (itr->second == t[i] && itr->first != s[i])
+    //         {
+    //             myMap[s[i]] = ' ';
+    //             flage = false;
+    //         }
+    //     }
+    //     if (flage)
+    //     {
+    //         myMap[s[i]] = t[i];
+    //     }
+    // }
+    // string str = "";
+    // for (auto c : s)
+    // {
+    //     str += myMap[c];
+    // }
+    // if (str != t)
+    // {
+    //     return false;
+    // }
+
+    // return true;
+    if (s.length() != t.length())
     {
         return false;
     }
-    map<char, char> myMap;
-    map<char, char>::iterator itr;
-    int i = 0;
-    for (i = 0; i < s.size(); i++)
+    map<char, char> a;
+    map<char, bool> b;
+    for (int i = 0; i < s.length(); i++)
     {
-        bool flage = true;
-        for (itr = myMap.begin(); itr != myMap.end(); ++itr)
+        if (a.find(s[i]) != a.end())
         {
-            if (itr->second == t[i] && itr->first != s[i])
+            if (a[s[i]] != t[i])
             {
-                myMap[s[i]] = ' ';
-                flage = false;
+                return false;
             }
         }
-        if (flage)
+        else
         {
-            myMap[s[i]] = t[i];
+            if (b[t[i]] == true)
+            {
+                return false;
+            }
+            else
+            {
+                a[s[i]] = t[i];
+                b[t[i]] = true;
+            }
         }
     }
-    string str = "";
-    for (auto c : s)
-    {
-        str += myMap[c];
-    }
-    if (str != t)
-    {
-        return false;
-    }
-
     return true;
 }
 int main()
