@@ -11,20 +11,41 @@ struct ListNode
 };
 bool hasCycle(ListNode *head)
 {
-    unordered_set<struct ListNode *> set;
-    int i = 0;
-    while (head != nullptr)
+    // unordered_set<struct ListNode *> set;
+    // int i = 0;
+    // while (head != nullptr)
+    // {
+    //     if (set.find(head->next) != set.end())
+    //     {
+    //         return true;
+    //     }
+    //     else
+    //     {
+    //         set.insert(head);
+    //     }
+    //     i++;
+    //     head = head->next;
+    // }
+    // return false;
+
+    // with less memory // using 2 pointer approach
+    if (!head)
+        return false;
+    ListNode *fast = head;
+    ListNode *slow = head;
+    do
     {
-        if (set.find(head->next) != set.end())
-        {
+        fast = fast->next;
+        slow = slow->next;
+        fast = fast != NULL ? fast->next : NULL;
+        if (fast == slow && fast && slow)
             return true;
-        }
-        else
-        {
-            set.insert(head);
-        }
-        i++;
-        head = head->next;
+    } while (slow && fast);
+
+    if (fast == slow && fast && slow)
+        return true;
+    else
+    {
+        return false;
     }
-    return false;
 }
