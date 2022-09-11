@@ -28,7 +28,7 @@ bool hasCycle(ListNode *head)
     // }
     // return false;
 
-    // with less memory // using 2 pointer approach
+    // with less memory // using 2 pointer2 approach
     if (!head)
         return false;
     ListNode *fast = head;
