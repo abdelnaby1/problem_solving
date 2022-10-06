@@ -7,7 +7,6 @@ string decodeMessage(string key, string message)
     unordered_map<char, char> map;
     for (int i = 0; i < key.size(); i++)
     {
-
         if (key[i] >= 97 and key[i] <= 122)
         {
             if (map.find(key[i]) == map.end())
