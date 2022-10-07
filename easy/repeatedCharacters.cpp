@@ -16,3 +16,6 @@ char repeatedCharacter(string s)
     }
     return ch;
 }
+int main()
+{
+}
