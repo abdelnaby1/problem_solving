@@ -17,11 +17,11 @@ public:
     }
     int findFinalValue(vector<int> &nums, int original)
     {
-        unordered_set<int> set;
-        for (int num : nums)
-        {
-            set.insert(num);
-        }
+        // unordered_set<int> set;
+        // for (int num : nums)
+        // {
+        //     set.insert(num);
+        // }
         while (find(nums, original) != -1)
         {
             original = original * 2;
