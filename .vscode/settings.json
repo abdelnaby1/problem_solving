@@ -9,6 +9,7 @@
     "unordered_set": "cpp",
     "vector": "cpp",
     "queue": "cpp",
-    "iostream": "cpp"
+    "iostream": "cpp",
+    "cstdlib": "cpp"
   }
 }
