@@ -1,16 +1,17 @@
 #include <iostream>
+#include <vector>
 using namespace std;
-int maxPower(string s)
+int findMaxConsecutiveOnes(vector<int> &nums)
 {
     int max = -1;
     int i = 0;
     int j;
-    int size = s.size();
+    int size = nums.size();
     while (i < size)
     {
         j = i;
         int count = 0;
-        while (s[i] == s[j])
+        while (j < size && nums[i] == nums[j] && nums[i] == 1)
         {
             j++;
             count++;
@@ -19,11 +20,12 @@ int maxPower(string s)
         {
             max = count;
         }
-        i++;
+        i = j + 1;
     }
     return max;
 }
 int main()
 {
-    cout << maxPower("leetcode");
+    vector<int> nums{1, 1, 0, 1, 1, 1};
+    cout << findMaxConsecutiveOnes(nums);
 }
